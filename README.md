@@ -1,4 +1,6 @@
 # D-FLIPDLOP-NEGEDGE
+## Developed by: VENKATA MOHAN N
+## Register Number: 212224230298
 
 **AIM:**
 
@@ -28,58 +30,37 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 
 **Procedure**
 
-1.	Type the program in Quartus software.
+1.Open Quartus → Create a New Project.
 
-2.	Compile and run the program.
+2.Write Verilog Code for D Flip-Flop using negedge clk.
 
-3.	Generate the RTL schematic and save the logic diagram.
+3.Save the Code (e.g., D_FF.v) → Add it to the project.
 
-4.	Create nodes for inputs and outputs to generate the timing diagram.
+4.Set Top-Level Module in project settings.
 
-5.	For different input combinations generate the timing diagram.
-
-/* write all the steps invloved */
+5.Compile the project → Done!
 
 **PROGRAM**
 ```
-module d_ff_neg_edge (d, clk, rst, q);
-
-  input d, clk, rst;
-  
-  output reg q;
-
-  always @(negedge clk or posedge rst) begin
-  
-    if (rst)
-    
-      q <= 0; // Reset the flip-flop
-
-    else
-    
-      q <= d; // D input is passed to Q on the negative clock edge
-
-  end
-  
+module dflip(D,Clock,reset,Q);
+input D,reset,Clock;
+output reg Q;
+always @ (negedge Clock)
+if(!reset)
+Q <= 0;
+else
+Q <= D;
 endmodule
-
-/* Program for flipflops and verify its truth table in quartus using Verilog programming.
-
-Developed by: VENKATA MOHAN N
-
-RegisterNumber: 212224230298
-*/
 ```
-
 **RTL LOGIC FOR FLIPFLOPS**
-<img width="1470" alt="Screenshot 2024-12-07 at 2 48 38 PM" src="https://github.com/user-attachments/assets/99ca16aa-9a9f-4315-868c-ad4818d13235">
+![Screenshot 2025-05-08 103637](https://github.com/user-attachments/assets/8d05a47a-fed5-4085-9c83-6911d4e8a335)
 
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-<img width="1470" alt="Screenshot 2024-12-07 at 2 52 29 PM" src="https://github.com/user-attachments/assets/f326a733-bb8f-413d-a0a2-e346bb672d4f">
-
+![Screenshot 2025-05-08 103655](https://github.com/user-attachments/assets/83a3989b-d0fa-4d51-a6f0-12179b5b6e4e)
 
 
 **RESULTS**
 
-sucessfully implemented D flipflop using verilog and validating their functionality using their functional tables
+Thus the D flipflop using verilog and validating their functionality using their functional tables is implemented successfully.
